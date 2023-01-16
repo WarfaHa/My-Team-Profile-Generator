@@ -2,6 +2,11 @@
 // includes the inquirer package to capture user input
 const fs = require("fs");
 const inquirer = require("inquirer");
+const createHTML = require("./src/createHTML.js");
+
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
 // Opening Statement/Introduction
 console.log("Let's generate a webpage that displays your team's basic info!");
 
@@ -29,7 +34,7 @@ const addEmployee = () => {
         break;
 
         default:
-          writeToFile();
+          writeToFile('./dist/index.html', createHTML(teamArray));
 }
 })
 
@@ -65,8 +70,10 @@ function addManager(){
     ]).then(function (managerInput) {
 
       //testing user input
-      //console.log(managerInput);
-      teamArray.push(managerInput);
+      //console.log(teamArray);
+      const manager = new Manager (managerInput.managerName, managerInput.managerId, managerInput.managerEmail, managerInput.officeNumber);
+      teamArray.push(manager);
+      console.log(manager);
       addEmployee();
     });
 
@@ -100,10 +107,8 @@ function addEngineer(){
     }
     
   ]).then(function (engineerInput) {
-
-    //testing engineer input
-    //console.log(engineerInput);
-    teamArray.push(engineerInput);
+    const engineer = new Engineer (engineerInput.engineerName, engineerInput.engineerId, engineerInput.engineerEmail, engineerInput.engineerGithub);
+    teamArray.push(engineer);
     addEmployee();
   });
 
@@ -136,18 +141,21 @@ function addIntern(){
     }
     
   ]).then(function (internInput) {
-
-    //testing intern input
-    //console.log(internInput);
-    teamArray.push(internInput);
-    //testing and console log teamArray
-    //console.log(teamArray);
+    const intern = new Intern (internInput.internName, internInput.internId, internInput.internEmail, internInput.internSchool);
+    teamArray.push(intern);
     addEmployee();
   });
 };
 
 // This function writes a HTML file
-function writeToFile() {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+  console.log("Congrats you finished building the dream team!")
+  });
+}
 
 // Function call to initialize app
 addEmployee();
