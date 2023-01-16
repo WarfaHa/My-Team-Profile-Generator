@@ -31,8 +31,16 @@ They can create pull requests and request to become contributers to this project
 ## Tests
 I will include a gif on how this project works, but you you can test it via the command line by running "npm test" to run Jest and see if the tests pass or fail. 
 
-![GIF-of-tests]
-![GIF-of-userinput]
+Below is a GIF of tests,
+
+![GIF-of-tests](./assets/Gif-Tests.gif)
+
+Below is a GIF of creating the HTML,
+
+![GIF-of-userinput](./assets/Gif-Creating-HTML.gif)
+
+Below is a screenshot of the HTML generated,
+
 ![screenshot-of-HTML](./assets/Screenshot-of-Team.PNG)
 
 ## Licenses
