@@ -62,10 +62,11 @@ function addManager(){
         message: "What is the manager's office number?"
       }
       
-    ]).then(function (userInput) {
+    ]).then(function (managerInput) {
 
       //testing user input
-      console.log(userInput);
+      //console.log(managerInput);
+      teamArray.push(managerInput);
       addEmployee();
     });
 
@@ -98,10 +99,11 @@ function addEngineer(){
       message: "What is the engineer's GitHub username?"
     }
     
-  ]).then(function (userInput) {
+  ]).then(function (engineerInput) {
 
-    //testing user input
-    console.log(userInput);
+    //testing engineer input
+    //console.log(engineerInput);
+    teamArray.push(engineerInput);
     addEmployee();
   });
 
@@ -133,10 +135,13 @@ function addIntern(){
       message: "What school did the intern go to?"
     }
     
-  ]).then(function (userInput) {
+  ]).then(function (internInput) {
 
-    //testing user input
-    console.log(userInput);
+    //testing intern input
+    //console.log(internInput);
+    teamArray.push(internInput);
+    //testing and console log teamArray
+    //console.log(teamArray);
     addEmployee();
   });
 };
