@@ -15,7 +15,9 @@ Using a Node.js command-line application that takes in information about employe
 * [Credits](#credits)
 
 ## Description
-This is a fun way to use backend to generate a HTML file
+GIVEN a command-line application that accepts user input
+WHEN a manager is prompted for their team members and their information
+THEN an HTML file is generated that displays a nicely formatted team roster based on user input
 
 ## Installation
 I would install this project using node js and inquirer packages and Jest to run tests
@@ -27,11 +29,11 @@ You would use this generator to save time building a team profile by answering a
 They can create pull requests and request to become contributers to this project
 
 ## Tests
-I will include a gif on how this project works, but you you can test it via the command line by answering the questions and generating the HTML file about the team profile
+I will include a gif on how this project works, but you you can test it via the command line by running "npm test" to run Jest and see if the tests pass or fail. 
 
 ![GIF-of-tests]
 ![GIF-of-userinput]
-![screenshot-of-HTML]
+![screenshot-of-HTML](./assets/Screenshot-of-Team.PNG)
 
 ## Licenses
 To view the MIT license. Click the license button above.
